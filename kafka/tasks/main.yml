@@ -1,4 +1,6 @@
 ---
-#  - include: tasks/kafka_install.yml
-#  - include: tasks/run.yml
-  - include: tasks/prometheus_install.yml
+  - include: tasks/kafka_install.yml
+  - include: prometheus_install.yml
+  - include: tasks/run.yml
+  - include: tasks/install_docker.yml
+
