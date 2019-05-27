@@ -1,0 +1,10 @@
+- name: Run Zookeeper server
+  shell:
+    cd {{ kafka_dir }}
+    ./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+- name: Run Kafka with JMX exporter
+  shell:
+    cd {{ kafka_dir }}
+    KAFKA_OPTS="$KAFKA_OPTS -javaagent:{{ kafka_dir }}/jmx_prometheus_javaagent-0.6.jar=7071:{{ kafka_dir }}/kafka-0-8-2.yml" \
+    {{ kafka_dir }}bin/kafka-server-start.sh {{ kafka_dir }}config/server.properties

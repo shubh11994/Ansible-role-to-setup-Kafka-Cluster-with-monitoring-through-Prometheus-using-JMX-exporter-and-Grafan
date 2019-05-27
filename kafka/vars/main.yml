@@ -1,0 +1,27 @@
+---
+
+kafka_version: 2.11
+
+kafka_dir: /opt/kafka
+
+prometheus_link: https://github.com/prometheus/prometheus/releases/download/v1.6.2/prometheus-1.6.2.linux-amd64.tar.gz
+
+alertmanager_link: https://github.com/prometheus/alertmanager/releases/download/v0.6.2/alertmanager-0.6.2.linux-amd64.tar.gz
+
+prometheus_dir: /opt/prometheus
+
+alertmanager_dir: /opt/alertmanager
+
+systemd_dir: /usr/lib/systemd/system
+
+#alertmanager_address: localhost
+
+#scrape: 5s
+#evaluation: 5s
+#smpt-server settings
+#smtp_server: smtp.gmail.com
+#smtp_port: 587
+#from_address: shubh.joshi
+#smtp_username: <your email username>
+#smtp_pass: !vault |
+# vars file for ./kafka

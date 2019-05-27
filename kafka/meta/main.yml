@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Shubh Joshi
+  description: kafka-promethius setup
+  company: opstree
+
+  license: license (GPLv2, CC-BY, etc)
+
+  min_ansible_version: 1.2
+
+  galaxy_tags:
+    - Kafka-Cluster
+    - monitoring
+    - promethius
+
+dependencies: []

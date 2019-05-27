@@ -1,0 +1,22 @@
+---
+- name: ensure kafka directory exists
+  file:
+    path: "{{ kafka_dir }}"
+    state: directory
+
+- name: Download Kafka Packages
+  unarchive:
+    src: "https://archive.apache.org/dist/kafka/0.10.0.0/kafka_{{ kafka_version }}-0.10.0.0.tgz"
+    dest: "{{ kafka_dir }}"
+    copy: no
+    extra_opts: [--strip-components=1]
+
+- name: get JMX eporter jar
+  get_url:
+    url: "https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.6/jmx_prometheus_javaagent-0.6.jar"
+    dest: "{{ kafka_dir }}/jmx_prometheus_javaagent-0.6.jar"
+
+- name: get JMX kafka YML
+  get_url:
+    url: "https://raw.githubusercontent.com/prometheus/jmx_exporter/master/example_configs/kafka-0-8-2.yml"
+    dest: "{{ kafka_dir }}/kafka-0-8-2.yml"
