@@ -1,0 +1,12 @@
+
+- name: Install pip
+    apt: name=python-pip state=present
+
+- name: install docker-py package
+    pip: name=docker-py
+
+- name: Running the container
+    docker_container:
+      image: grafana:latest
+      port: 3000:3000
+      state: running
