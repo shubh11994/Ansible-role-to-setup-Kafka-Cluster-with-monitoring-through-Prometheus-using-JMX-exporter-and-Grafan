@@ -5,7 +5,7 @@ Ansible role to setup kafka cluster with JMX exporter to export matrices to prom
 
 1- Install kafka with zookeeper
 2- Get JMX exporter
-3- Run Kafka Cluster with JMX exporter to erxport cluster matrices to promethius
+3- Run Kafka Cluster with JMX exporter to export cluster matrices to promethius
 4- Install Promethius
 5- Install Docker
 6- Run Grafana in docker
